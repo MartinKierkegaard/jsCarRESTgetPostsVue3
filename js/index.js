@@ -45,10 +45,10 @@ Vue.createApp({
 
 
             })
-            .catch(error = (ex) => {
+            .catch(error => {
               //resultElement.innerHTML = generateErrorHTMLOutput(error);
               this.carslist = []
-               this.error = ex.message
+               this.error = error.message
               console.log("Error:" + this.error);
             })      
             
@@ -73,9 +73,9 @@ Vue.createApp({
               
              console.log("length of the carlists array " + this.carslist.length)
             })
-            .catch(error = (ex) => {
+            .catch(error => {
               this.carslist = []
-              this.error = ex.message
+              this.error = error.message
               console.log("Error:" + this.error);
             })      
         },
@@ -95,9 +95,9 @@ Vue.createApp({
               
              console.log("length of cars array " + this.carlists.length)
             })
-            .catch(error = (ex) => {
+            .catch(error => {
               this.carlists = []
-              this.error = ex.message
+              this.error = error.message
               console.log("Error:" + this.error);
             })    
         },
@@ -119,9 +119,9 @@ Vue.createApp({
               
              console.log("length of the carlists array " + this.carslist.length)
             })
-            .catch(error = (ex) => {
+            .catch(error => {
               this.carslist = []
-              this.error = ex.message
+              this.error = error.message
               console.log("Error:" + this.error);
             })      
         }
