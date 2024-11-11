@@ -33,7 +33,6 @@ Vue.createApp({
              //axios call that returns all the elements from the webservice
             axios.get(baseUri)
             .then(response => {
-             var divtag = document.getElementById("content");
 
              console.log("in function getAllCars");
              console.log("status code: "+ response.status );
