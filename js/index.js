@@ -1,4 +1,5 @@
-const baseUri = "https://webapicar20190326034339.azurewebsites.net/api/cars"
+const baseUri = "http://localhost:5180/api/Cars"
+
 Vue.createApp({
     data() {
         return {
@@ -28,6 +29,7 @@ Vue.createApp({
         },
         //Read this for an example: https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
          getAllCars() {
+            this.error = null;
              //axios call that returns all the elements from the webservice
             axios.get(baseUri)
             .then(response => {
@@ -53,6 +55,7 @@ Vue.createApp({
             
         },
         getByCarId(id){
+            this.error = null;
             //axios call that returns the items from a specified user 
             uri = baseUri +"/"+id
             axios.get(uri)
@@ -78,6 +81,7 @@ Vue.createApp({
             })      
         },
         PostCar(){
+            this.error = null;
             axios.post(baseUri,{"id":this.carId,"vendor":this.carVendor,"model":this.carModel,"price":this.carPrice})
             .then(response => {
             
@@ -99,6 +103,7 @@ Vue.createApp({
             })    
         },
         deleteByCarId(id){
+            this.error = null;
             uri = baseUri +"/"+id
             //axios call that returns the items from a specified user 
             axios.delete(uri)
